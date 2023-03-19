@@ -1,12 +1,20 @@
-import Typography from './components/Typography'
-import {  } from 'flowbite-react'
+import Header from './components/Header'
+import { pages } from './pages'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 export default function App() {
   return (
-    <div className="dark:bg-gray-800 grow">
-      <Typography>
-        <h1>Hello World</h1>
-      </Typography>
-    </div>
+    <BrowserRouter>
+      <div className="dark:bg-gray-900 grow">
+        <Header />
+        <div className="mx-8 my-6 lg:my-2">
+          <Routes>
+            {pages.map(page =>
+              <Route element={page.component} key={page.path} path={page.path} />
+            )}
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   )
 }
