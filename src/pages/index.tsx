@@ -1,3 +1,4 @@
+import Contact from "./Contact"
 import NotFound from "./NotFound"
 
 type Page = {
@@ -26,7 +27,7 @@ export const pages: Page[] = [
   {
     title: 'Contact',
     path: '/contact',
-    component: <div>contact</div>,
+    component: <Contact />,
   },
   {
     title: 'Not Found',
