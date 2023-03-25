@@ -1,12 +1,6 @@
-import {
-  Button,
-  Label,
-  Spinner,
-  Textarea,
-  TextInput,
-  Toast,
-} from 'flowbite-react'
+import { Button, Label, Spinner, Textarea, TextInput } from 'flowbite-react'
 import { useCallback, useState } from 'react'
+import { useToast } from '../components/Toast'
 import Typography from '../components/Typography'
 
 export default function Contact() {
@@ -25,13 +19,12 @@ export default function Contact() {
 
 function ContactForm() {
   const [errors, setErrors] = useState<{ [key: string]: string }>({})
-  const [showToast, setShowToast] = useState(false)
   const [isLoading, setisLoading] = useState(false)
+  const { sendToast } = useToast()
 
   const onSucess = useCallback(() => {
-    setShowToast(true)
-    setTimeout(() => setShowToast(false), 3000)
-  }, [])
+    sendToast('Sucess')
+  }, [sendToast])
 
   const onSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
@@ -111,12 +104,6 @@ function ContactForm() {
       <Button className="w-full" disabled={isLoading} type="submit">
         {isLoading ? <Spinner /> : 'Submit'}
       </Button>
-      {showToast && (
-        <Toast className="fixed bottom-5 right-5">
-          Success
-          <Toast.Toggle />
-        </Toast>
-      )}
     </form>
   )
 }
