@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <Navbar fluid>
       <Navbar.Brand
-        className="dark:text-gray-400 dark:hover:text-white cursor-pointer"
+        className="hover:text-blue-600 dark:text-gray-400 dark:hover:text-white cursor-pointer text-2xl font-bold"
         href="/"
         onClick={(e) => goToPage(e, '/')}
       >
