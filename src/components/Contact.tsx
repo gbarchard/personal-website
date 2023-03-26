@@ -1,19 +1,27 @@
-import { Button, Label, Spinner, Textarea, TextInput } from 'flowbite-react'
+import { Button, Label, Modal, Spinner, Textarea, TextInput } from 'flowbite-react'
 import { useCallback, useState } from 'react'
-import { useToast } from '../components/Toast'
-import Typography from '../components/Typography'
+import { useSearchParams } from 'react-router-dom'
+import { useToast } from './Toast'
+import Typography from './Typography'
 
 export default function Contact() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  
   return (
-    <div className="flex justify-center">
-      <div className="grow max-w-3xl space-y-12">
+    <Modal
+      show={searchParams.get('contact') === 'true'}
+      onClose={() => setSearchParams()}
+    >
+      <Modal.Header>
+        Contact
+      </Modal.Header>
+      <Modal.Body>
         <Typography>
-          <h1>Contact</h1>
-          <p>TODO</p>
+          <p>Have a question or just want to chat? Send me a message and I'll get back to you as soon as I can.</p>
         </Typography>
         <ContactForm />
-      </div>
-    </div>
+      </Modal.Body>
+    </Modal>
   )
 }
 
@@ -21,6 +29,7 @@ function ContactForm() {
   const [errors, setErrors] = useState<{ [key: string]: string }>({})
   const [isLoading, setisLoading] = useState(false)
   const { sendToast } = useToast()
+  const [, setSearchParams] = useSearchParams()
 
   const onSucess = useCallback(() => {
     sendToast('Sucess')
@@ -65,12 +74,12 @@ function ContactForm() {
       }).then((res) => res.json())
 
       setisLoading(false)
-
+      setSearchParams()
       if (res.success) {
         onSucess()
       }
     },
-    [errors, onSucess]
+    [errors, onSucess, setSearchParams]
   )
 
   return (

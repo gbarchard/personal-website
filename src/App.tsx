@@ -3,6 +3,7 @@ import { pages } from './pages'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import FooterSection from './components/Footer'
 import { ToastContextProvider } from './components/Toast'
+import Contact from './components/Contact'
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
                 ))}
               </Routes>
             </div>
+            <Contact />
             <FooterSection />
           </div>
         </div>

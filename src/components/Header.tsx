@@ -1,10 +1,11 @@
 import { Navbar } from 'flowbite-react'
 import { useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { pages } from '../pages'
 
 export default function Header() {
   const navigate = useNavigate()
+  const [, setSearchParams] = useSearchParams()
   const goToPage = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, path: string) => {
       event.preventDefault()
@@ -36,6 +37,16 @@ export default function Header() {
               {page.title}
             </Navbar.Link>
           ))}
+        <Navbar.Link
+          className="cursor-pointer"
+          href="?contact"
+          onClick={(e) => {
+            e.preventDefault()
+            setSearchParams({ contact: 'true' })
+          }}
+        >
+          Contact
+        </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   )
