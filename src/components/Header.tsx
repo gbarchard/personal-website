@@ -15,7 +15,7 @@ export default function Header() {
   )
 
   return (
-    <Navbar fluid>
+    <Navbar border fluid>
       <Navbar.Brand
         className="hover:text-blue-600 dark:text-gray-400 dark:hover:text-white cursor-pointer text-2xl font-bold"
         href="/"

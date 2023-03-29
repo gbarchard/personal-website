@@ -12,7 +12,7 @@ export default function App() {
         <div className="dark:bg-gray-900 grow flex flex-col overflow-hidden">
           <Header />
           <div className="grow overflow-scroll flex flex-col">
-            <div className="grow flex flex-col px-8 py-6 lg:py-2">
+            <div className="grow flex flex-col px-4 sm:px-12 md:px-32 lg:px-48 py-2 lg:py-6">
               <Routes>
                 {pages.map((page) => (
                   <Route

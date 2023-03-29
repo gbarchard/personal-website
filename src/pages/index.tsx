@@ -1,4 +1,5 @@
 import NotFound from "./NotFound"
+import WorkExperience from "./WorkExperience"
 
 type Page = {
   title: string
@@ -11,17 +12,17 @@ export const pages: Page[] = [
   {
     title: 'Home',
     path: '/',
-    component: <div>Home</div>,
+    component: <div className="dark:text-white">Home</div>,
   },
   {
     title: 'Work Experience',
     path: '/experience',
-    component: <div>Work Experience</div>,
+    component: <WorkExperience />,
   },
   {
     title: 'Projects',
     path: '/projects',
-    component: <div>Projects</div>,
+    component: <div className="dark:text-white">Projects</div>,
   },
   {
     title: 'Not Found',
