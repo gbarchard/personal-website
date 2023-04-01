@@ -69,7 +69,7 @@ function TitleLink(props: PropsWithChildren<{ href: string }>) {
   const { children, href } = props
   return (
     <span className="format dark:format-dark format-blue text-lg">
-      <a href={href}>{children}</a>
+      <a href={href} target="_blank" rel="noreferrer">{children}</a>
     </span>
   )
 }
