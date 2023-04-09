@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import FooterSection from './components/Footer'
 import { ToastContextProvider } from './components/Toast'
@@ -7,7 +7,7 @@ import { pages } from './pages'
 
 export default function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <ToastContextProvider>
         <div className="dark:bg-gray-900 grow flex flex-col overflow-hidden">
           <Header />
@@ -28,6 +28,6 @@ export default function App() {
           </div>
         </div>
       </ToastContextProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
