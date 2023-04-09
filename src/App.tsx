@@ -7,7 +7,7 @@ import { pages } from './pages'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ToastContextProvider>
         <div className="dark:bg-gray-900 grow flex flex-col overflow-hidden">
           <Header />
