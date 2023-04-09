@@ -35,7 +35,7 @@ export default function WorkExperience() {
             <Timeline.Title>
               Quality Assurance Intern at{' '}
               <TitleLink href="https://www.answerrocket.com">
-                Answerrocket
+                AnswerRocket
               </TitleLink>
             </Timeline.Title>
             <Timeline.Body>

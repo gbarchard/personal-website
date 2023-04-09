@@ -1,9 +1,9 @@
-import Header from './components/Header'
-import { pages } from './pages'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Header from './components/Header'
 import FooterSection from './components/Footer'
 import { ToastContextProvider } from './components/Toast'
 import Contact from './components/Contact'
+import { pages } from './pages'
 
 export default function App() {
   return (

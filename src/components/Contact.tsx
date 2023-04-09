@@ -1,4 +1,11 @@
-import { Button, Label, Modal, Spinner, Textarea, TextInput } from 'flowbite-react'
+import {
+  Button,
+  Label,
+  Modal,
+  Spinner,
+  Textarea,
+  TextInput,
+} from 'flowbite-react'
 import { useCallback, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useToast } from './Toast'
@@ -6,18 +13,19 @@ import Typography from './Typography'
 
 export default function Contact() {
   const [searchParams, setSearchParams] = useSearchParams()
-  
+
   return (
     <Modal
       show={searchParams.get('contact') === 'true'}
       onClose={() => setSearchParams()}
     >
-      <Modal.Header>
-        Contact
-      </Modal.Header>
+      <Modal.Header>Contact</Modal.Header>
       <Modal.Body>
         <Typography>
-          <p>Have a question or just want to chat? Send me a message and I'll get back to you as soon as I can.</p>
+          <p>
+            Have a question or just want to chat? Send me a message and I'll get
+            back to you as soon as I can.
+          </p>
         </Typography>
         <ContactForm />
       </Modal.Body>
@@ -83,8 +91,8 @@ function ContactForm() {
   )
 
   return (
-    <form noValidate onSubmit={onSubmit}>
-      <div className="mb-4">
+    <form className="space-y-4" noValidate onSubmit={onSubmit}>
+      <div>
         <Label htmlFor="name" value="Name" />
         <TextInput
           color={errors.name && 'failure'}
@@ -92,7 +100,7 @@ function ContactForm() {
           name="name"
         />
       </div>
-      <div className="mb-4">
+      <div>
         <Label htmlFor="email" value="Email" />
         <TextInput
           color={errors.email && 'failure'}
@@ -102,7 +110,7 @@ function ContactForm() {
           placeholder="name@example.com"
         />
       </div>
-      <div className="mb-4">
+      <div>
         <Label htmlFor="message" value="Message" />
         <Textarea
           color={errors.message && 'failure'}

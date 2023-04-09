@@ -13,6 +13,7 @@ export default function FooterSection() {
       <div />
       <div className="flex space-x-6">
         <Footer.Icon
+          className="hover:text-blue-700"
           href="https://www.linkedin.com/in/grant-barchard-21a8131a8"
           icon={Linkedin}
           onClick={(e) => {
@@ -24,6 +25,7 @@ export default function FooterSection() {
           }}
         />
         <Footer.Icon
+          className="hover:text-blue-700"
           href="https://github.com/gbarchard"
           icon={Github}
           onClick={(e) => {
