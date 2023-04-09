@@ -1,5 +1,6 @@
 import Home from "./Home"
 import NotFound from "./NotFound"
+import Projects from "./Projects"
 import WorkExperience from "./WorkExperience"
 
 type Page = {
@@ -23,7 +24,7 @@ export const pages: Page[] = [
   {
     title: 'Projects',
     path: '/projects',
-    component: <div className="dark:text-white">Projects</div>,
+    component: <Projects />,
   },
   {
     title: 'Not Found',
